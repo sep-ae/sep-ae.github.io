@@ -1,108 +1,468 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Profile</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #e3f2fd; /* Light blue background */
-        }
-        .profile-container {
-            text-align: center;
-            margin-top: 100px;
-        }
-        .profile-photo {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-        }
-        .description {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
-        }
-        footer {
-            background-color: #bbdefb; /* Light blue footer */
-        }
-    </style>
+    <meta name="description" content="Septito - IT Student & Developer Portfolio. D3 Teknologi Informasi at Politeknik Negeri Madiun.">
+    <meta name="keywords" content="Septito, Portfolio, Developer, IT Student, Politeknik Negeri Madiun">
+    <meta name="author" content="Septito">
+    <title>Septito | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">My Profile</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
+    <!-- Animated Background Particles -->
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">S</span>
+                <span class="logo-text">eptito</span>
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#education" class="nav-link" data-section="education">Education</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
         </div>
     </nav>
 
-    <div class="container profile-container">
-        <!-- Add your profile photo here -->
-        <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-photo">
-        <div class="description">
-            <h2>Your Name</h2>
-            <p>This is a short description about you. You can mention your profession, interests, or anything you'd like to share with your visitors.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge" data-animate="fade-up">
+                    <span class="badge-dot"></span>
+                    IT Student & Developer
+                </div>
+                <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                    Hi, I'm <span class="highlight">Septito</span><br>
+                    <span class="typed-wrapper">
+                        <span class="typed-text" id="typedText"></span>
+                        <span class="typed-cursor">|</span>
+                    </span>
+                </h1>
+                <p class="hero-description" data-animate="fade-up" data-delay="200">
+                    Mahasiswa D3 Teknologi Informasi di Politeknik Negeri Madiun.
+                    Passionate about Computer Network, Cyber Security, dan Web Development.
+                    Always curious, always learning — especially after breaking something first. 😄
+                </p>
+                <div class="hero-buttons" data-animate="fade-up" data-delay="300">
+                    <a href="#projects" class="btn btn-primary">
+                        Explore Projects <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        Get in Touch
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="hero-stats" data-animate="fade-up" data-delay="400">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="27">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Repositories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="9">0</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="9">0</span>
+                        <span class="stat-label">Following</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image" data-animate="fade-left" data-delay="200">
+                <div class="profile-ring">
+                    <div class="ring-glow"></div>
+                    <div class="profile-photo-wrapper">
+                        <img src="profil.jpeg" alt="Septito - Profile Photo" class="profile-photo" id="profilePhoto">
+                    </div>
+                    <div class="ring-decoration ring-dot-1"></div>
+                    <div class="ring-decoration ring-dot-2"></div>
+                </div>
+
+                <!-- Floating Cards -->
+                <div class="floating-card card-activity" data-animate="float">
+                    <div class="fc-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="fc-content">
+                        <span class="fc-title">Currently Learning</span>
+                        <span class="fc-value">Cyber Security 🔒</span>
+                    </div>
+                </div>
+                <div class="floating-card card-community" data-animate="float">
+                    <div class="fc-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="fc-content">
+                        <span class="fc-title">Location</span>
+                        <span class="fc-value">Madiun, Jawa Timur</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container mt-5">
-        <section id="about" class="my-5">
-            <h2>About Me</h2>
-            <p>This is a detailed section about you. You can add more information about your background, experience, or hobbies.</p>
-        </section>
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Get to Know Me</h2>
+                <p class="section-subtitle">A passionate IT student who loves exploring technology</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card" data-animate="fade-up" data-delay="100">
+                    <div class="about-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Who Am I?</h3>
+                    <p>Saya Septito, mahasiswa D3 Teknologi Informasi di Politeknik Negeri Madiun. Saya passionate di bidang Computer Network, Cyber Security, dan Web Development.</p>
+                </div>
+                <div class="about-card" data-animate="fade-up" data-delay="200">
+                    <div class="about-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Fun Fact</h3>
+                    <p>I learn faster when I'm curious, especially after breaking something first! 😄 Trial and error is my best learning method.</p>
+                </div>
+                <div class="about-card" data-animate="fade-up" data-delay="300">
+                    <div class="about-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Collaboration</h3>
+                    <p>I'm always looking to collaborate on interesting projects. Feel free to reach out via Telegram <strong>@septitoo</strong> if you want to work together!</p>
+                </div>
+                <div class="about-card" data-animate="fade-up" data-delay="400">
+                    <div class="about-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Current Focus</h3>
+                    <p>Currently diving deep into Cyber Security — learning about network security, ethical hacking, and building more secure applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="projects" class="my-5">
-            <h2>My Projects</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Project 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 1</h5>
-                            <p class="card-text">Brief description of the project.</p>
+    <!-- Education Section -->
+    <section class="section education-section" id="education">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Education</span>
+                <h2 class="section-title">My Journey</h2>
+                <p class="section-subtitle">Education background that shaped my career path</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-animate="fade-up" data-delay="100">
+                    <div class="timeline-marker">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Ongoing</div>
+                        <h3>D3 Teknologi Informasi</h3>
+                        <h4>Politeknik Negeri Madiun</h4>
+                        <p>Memperdalam ilmu di bidang Teknologi Informasi, fokus pada pengembangan software, jaringan komputer, dan keamanan siber.</p>
+                        <div class="timeline-tags">
+                            <span>Web Development</span>
+                            <span>Networking</span>
+                            <span>Database</span>
+                            <span>Cyber Security</span>
                         </div>
                     </div>
                 </div>
-                <!-- Add more project cards here -->
+                <div class="timeline-item" data-animate="fade-up" data-delay="200">
+                    <div class="timeline-marker">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge completed">Completed</div>
+                        <h3>Teknik Komputer & Jaringan (TKJ)</h3>
+                        <h4>SMK Negeri 5 Madiun</h4>
+                        <p>Mempelajari dasar-dasar jaringan komputer, administrasi sistem, dan troubleshooting hardware & software.</p>
+                        <div class="timeline-tags">
+                            <span>Networking</span>
+                            <span>Hardware</span>
+                            <span>System Admin</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="my-5">
-            <h2>Contact</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Tech Stack</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Tools and technologies I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card" data-animate="fade-up" data-delay="50">
+                    <div class="skill-icon" style="--skill-color: #f7df1e">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <span class="skill-name">JavaScript</span>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                <div class="skill-card" data-animate="fade-up" data-delay="100">
+                    <div class="skill-icon" style="--skill-color: #3776ab">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <span class="skill-name">Python</span>
                 </div>
-                <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
-            </form>
-        </section>
-    </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="150">
+                    <div class="skill-icon" style="--skill-color: #777bb4">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <span class="skill-name">PHP</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="200">
+                    <div class="skill-icon" style="--skill-color: #42b883">
+                        <i class="fab fa-vuejs"></i>
+                    </div>
+                    <span class="skill-name">Vue.js</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="250">
+                    <div class="skill-icon" style="--skill-color: #e34f26">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <span class="skill-name">HTML5</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="300">
+                    <div class="skill-icon" style="--skill-color: #1572b6">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <span class="skill-name">CSS3</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="350">
+                    <div class="skill-icon" style="--skill-color: #ffca28">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <span class="skill-name">Firebase</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="400">
+                    <div class="skill-icon" style="--skill-color: #ff6c37">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <span class="skill-name">CloudFlare</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="450">
+                    <div class="skill-icon" style="--skill-color: #ff9900">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <span class="skill-name">AWS</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="500">
+                    <div class="skill-icon" style="--skill-color: #009639">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <span class="skill-name">Nginx</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="550">
+                    <div class="skill-icon" style="--skill-color: #d22128">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <span class="skill-name">Apache</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="600">
+                    <div class="skill-icon" style="--skill-color: #4479a1">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <span class="skill-name">MySQL</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="650">
+                    <div class="skill-icon" style="--skill-color: #2496ed">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <span class="skill-name">Docker</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="700">
+                    <div class="skill-icon" style="--skill-color: #f05032">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <span class="skill-name">Git</span>
+                </div>
+                <div class="skill-card" data-animate="fade-up" data-delay="750">
+                    <div class="skill-icon" style="--skill-color: #0db7ed">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <span class="skill-name">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="text-center py-4">
-        <p>&copy; 2024 Your Name</p>
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work and experiments</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-animate="fade-up" data-delay="100">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/sep-ae" target="_blank" class="project-link" aria-label="View on GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Cyber Security Tools</h3>
+                        <p>Collection of security tools and scripts for network analysis and vulnerability assessment.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Security</span>
+                            <span>Networking</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-animate="fade-up" data-delay="200">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/sep-ae" target="_blank" class="project-link" aria-label="View on GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Web Applications</h3>
+                        <p>Full-stack web applications built with PHP, Vue.js, and various modern frameworks.</p>
+                        <div class="project-tags">
+                            <span>PHP</span>
+                            <span>Vue.js</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-animate="fade-up" data-delay="300">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/sep-ae" target="_blank" class="project-link" aria-label="View on GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Network Infrastructure</h3>
+                        <p>Network configuration, server management with Nginx & Apache, deployed on AWS & CloudFlare.</p>
+                        <div class="project-tags">
+                            <span>Nginx</span>
+                            <span>AWS</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-cta" data-animate="fade-up" data-delay="400">
+                <a href="https://github.com/sep-ae?tab=repositories" target="_blank" class="btn btn-primary">
+                    View All Repositories <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Feel free to reach out for collaboration or just a friendly chat</p>
+            </div>
+            <div class="contact-grid">
+                <a href="https://instagram.com/septitoo" target="_blank" class="contact-card" data-animate="fade-up" data-delay="100">
+                    <div class="contact-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>@septitoo</p>
+                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://t.me/septitoo" target="_blank" class="contact-card" data-animate="fade-up" data-delay="200">
+                    <div class="contact-icon telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                    <h3>Telegram</h3>
+                    <p>@septitoo</p>
+                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://github.com/sep-ae" target="_blank" class="contact-card" data-animate="fade-up" data-delay="300">
+                    <div class="contact-icon github">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>sep-ae</p>
+                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://www.linkedin.com/in/septitoo" target="_blank" class="contact-card" data-animate="fade-up" data-delay="400">
+                    <div class="contact-icon linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>Septito</p>
+                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="mailto:septitoo@gmail.com" class="contact-card" data-animate="fade-up" data-delay="500">
+                    <div class="contact-icon email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Send me a message</p>
+                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <span class="logo-icon">S</span>
+                        <span class="logo-text">eptito</span>
+                    </a>
+                    <p>IT Student & Developer from Madiun, Jawa Timur 🇮🇩</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/septitoo" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/septitoo" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://github.com/sep-ae" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/septitoo" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Septito. All rights reserved. Built with ❤️</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script src="app.js"></script>
 </body>
 </html>
